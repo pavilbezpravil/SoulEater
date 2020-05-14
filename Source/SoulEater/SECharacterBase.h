@@ -47,6 +47,12 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	float GetMaxHealth() const;
+
+	UFUNCTION(BlueprintCallable)
+    float GetStamina() const;
+	
+	UFUNCTION(BlueprintCallable)
+    float GetMaxStamina() const;
 	
 	UFUNCTION(BlueprintCallable)
 	float GetSouls() const;
@@ -80,8 +86,16 @@ protected:
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnHealthChanged(float DeltaValue, const struct FGameplayTagContainer& EventTags);
+
+	UFUNCTION(BlueprintImplementableEvent)
+    void OnSoulsChanged(float DeltaValue, const struct FGameplayTagContainer& EventTags);
+
+	UFUNCTION(BlueprintImplementableEvent)
+    void OnStaminaChanged(float DeltaValue, const struct FGameplayTagContainer& EventTags);
 	
 	void HandleHealthChanged(float DeltaValue, const struct FGameplayTagContainer& SourceTags);
+	void HandleSoulsChanged(float DeltaValue, const struct FGameplayTagContainer& SourceTags);
+	void HandleStanimaChanged(float DeltaValue, const struct FGameplayTagContainer& SourceTags);
 
 	friend USEAttributeSet;
 };

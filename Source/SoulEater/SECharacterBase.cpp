@@ -74,6 +74,14 @@ float ASECharacterBase::GetMaxHealth() const {
 	return AttributeSet->GetMaxHealth();
 }
 
+float ASECharacterBase::GetStamina() const {
+	return AttributeSet->GetStamina();
+}
+
+float ASECharacterBase::GetMaxStamina() const {
+	return AttributeSet->GetMaxStamina();
+}
+
 float ASECharacterBase::GetSouls() const {
 	return AttributeSet->GetSouls();
 }
@@ -155,5 +163,17 @@ void ASECharacterBase::RemoveStartupGameplayAbilities() {
 void ASECharacterBase::HandleHealthChanged(float DeltaValue, const FGameplayTagContainer& SourceTags) {
 	if (bAbilitiesInitialized) {
 		OnHealthChanged(DeltaValue, SourceTags);
+	}
+}
+
+void ASECharacterBase::HandleSoulsChanged(float DeltaValue, const FGameplayTagContainer& SourceTags) {
+	if (bAbilitiesInitialized) {
+		OnSoulsChanged(DeltaValue, SourceTags);
+	}
+}
+
+void ASECharacterBase::HandleStanimaChanged(float DeltaValue, const FGameplayTagContainer& SourceTags) {
+	if (bAbilitiesInitialized) {
+		OnStaminaChanged(DeltaValue, SourceTags);
 	}
 }

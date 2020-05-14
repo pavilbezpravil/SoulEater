@@ -35,6 +35,14 @@ public:
     FGameplayAttributeData MaxHealth;
 	ATTRIBUTE_ACCESSORS(USEAttributeSet, MaxHealth)
 
+	UPROPERTY(BlueprintReadOnly, Category = "Stamina")
+    FGameplayAttributeData Stamina;
+	ATTRIBUTE_ACCESSORS(USEAttributeSet, Stamina)
+
+    UPROPERTY(BlueprintReadOnly, Category = "MaxStamina")
+    FGameplayAttributeData MaxStamina;
+	ATTRIBUTE_ACCESSORS(USEAttributeSet, MaxStamina)
+	
 	UPROPERTY(BlueprintReadOnly, Category = "Souls")
     FGameplayAttributeData Souls;
 	ATTRIBUTE_ACCESSORS(USEAttributeSet, Souls)

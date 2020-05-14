@@ -40,4 +40,19 @@ void USEAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallback
             TargetCharacter->HandleHealthChanged(DeltaValue, SourceTags);
         }
     }
+    else if (Data.EvaluatedData.Attribute == GetSoulsAttribute())
+    {
+        if (TargetCharacter)
+        {
+            TargetCharacter->HandleSoulsChanged(DeltaValue, SourceTags);
+        }
+    }
+    else if (Data.EvaluatedData.Attribute == GetStaminaAttribute())
+    {
+        SetStamina(FMath::Clamp(GetStamina(), 0.0f, GetMaxStamina()));
+        if (TargetCharacter)
+        {
+            TargetCharacter->HandleStanimaChanged(DeltaValue, SourceTags);
+        }
+    }
 }

@@ -57,6 +57,25 @@ public:
 	UFUNCTION(BlueprintCallable)
 	float GetSouls() const;
 	
+	/**
+     * Attempts to activate all abilities that match the specified tags
+     * Returns true if it thinks it activated, but it may return false positives due to failure later in activation.
+     * If bAllowRemoteActivation is true, it will remotely activate local/server abilities, if false it will only try to locally activate the ability
+     */
+    UFUNCTION(BlueprintCallable, Category = "Abilities")
+    bool ActivateAbilitiesWithTags(FGameplayTagContainer AbilityTags, bool bAllowRemoteActivation = true);
+    
+    /** Returns a list of active abilities matching the specified tags. This only returns if the ability is currently running */
+    UFUNCTION(BlueprintCallable, Category = "Abilities")
+    void GetActiveAbilitiesWithTags(FGameplayTagContainer AbilityTags, TArray<USEGameplayAbility*>& ActiveAbilities);
+    
+    /** Returns total time and remaining time for cooldown tags. Returns false if no active cooldowns found */
+    UFUNCTION(BlueprintCallable, Category = "Abilities")
+    bool GetCooldownRemainingForTag(FGameplayTagContainer CooldownTags, float& TimeRemaining, float& CooldownDuration);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Abilities")
+    bool HasTag(FGameplayTag Tag);
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

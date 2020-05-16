@@ -82,6 +82,10 @@ float ASECharacterBase::GetMaxStamina() const {
 	return AttributeSet->GetMaxStamina();
 }
 
+float ASECharacterBase::GetMoveSpeed() const {
+	return AttributeSet->GetMoveSpeed();
+}
+
 float ASECharacterBase::GetSouls() const {
 	return AttributeSet->GetSouls();
 }
@@ -215,6 +219,11 @@ void ASECharacterBase::RemoveStartupGameplayAbilities() {
 
 		bAbilitiesInitialized = false;
 	}
+}
+
+void ASECharacterBase::HandleDamage(float DamageAmount, const FHitResult& HitInfo,
+	const FGameplayTagContainer& DamageTags, ASECharacterBase* InstigatorCharacter, AActor* DamageCauser) {
+	OnDamaged(DamageAmount, HitInfo, DamageTags, InstigatorCharacter, DamageCauser);
 }
 
 void ASECharacterBase::HandleHealthChanged(float DeltaValue, const FGameplayTagContainer& SourceTags) {

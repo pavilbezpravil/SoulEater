@@ -10,7 +10,7 @@ class ASECharacterBase;
 /**
  * 
  */
-UCLASS()
+UCLASS(Blueprintable, meta = (ShowWorldContextPin))
 class SOULEATER_API USETargetType : public UObject
 {
 	GENERATED_BODY()

@@ -42,6 +42,22 @@ public:
     UPROPERTY(BlueprintReadOnly, Category = "MaxStamina")
     FGameplayAttributeData MaxStamina;
 	ATTRIBUTE_ACCESSORS(USEAttributeSet, MaxStamina)
+
+    UPROPERTY(BlueprintReadOnly, Category = "Damage")
+    FGameplayAttributeData AttackPower;
+	ATTRIBUTE_ACCESSORS(USEAttributeSet, AttackPower)
+
+    UPROPERTY(BlueprintReadOnly, Category = "Damage")
+    FGameplayAttributeData DefensePower;
+	ATTRIBUTE_ACCESSORS(USEAttributeSet, DefensePower)
+
+    UPROPERTY(BlueprintReadOnly, Category = "MoveSpeed")
+    FGameplayAttributeData MoveSpeed;
+	ATTRIBUTE_ACCESSORS(USEAttributeSet, MoveSpeed)
+
+    UPROPERTY(BlueprintReadOnly, Category = "Damage")
+    FGameplayAttributeData Damage;
+	ATTRIBUTE_ACCESSORS(USEAttributeSet, Damage)
 	
 	UPROPERTY(BlueprintReadOnly, Category = "Souls")
     FGameplayAttributeData Souls;

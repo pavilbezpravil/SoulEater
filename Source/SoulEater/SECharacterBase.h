@@ -53,6 +53,9 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
     float GetMaxStamina() const;
+
+	UFUNCTION(BlueprintCallable)
+	virtual float GetMoveSpeed() const;
 	
 	UFUNCTION(BlueprintCallable)
 	float GetSouls() const;
@@ -104,6 +107,9 @@ protected:
     int32 bAbilitiesInitialized;
 
 	UFUNCTION(BlueprintImplementableEvent)
+    void OnDamaged(float DamageAmount, const FHitResult& HitInfo, const struct FGameplayTagContainer& DamageTags, ASECharacterBase* InstigatorCharacter, AActor* DamageCauser);
+	
+	UFUNCTION(BlueprintImplementableEvent)
 	void OnHealthChanged(float DeltaValue, const struct FGameplayTagContainer& EventTags);
 
 	UFUNCTION(BlueprintImplementableEvent)
@@ -111,7 +117,8 @@ protected:
 
 	UFUNCTION(BlueprintImplementableEvent)
     void OnStaminaChanged(float DeltaValue, const struct FGameplayTagContainer& EventTags);
-	
+
+	void HandleDamage(float DamageAmount, const FHitResult& HitInfo, const struct FGameplayTagContainer& DamageTags, ASECharacterBase* InstigatorCharacter, AActor* DamageCauser);
 	void HandleHealthChanged(float DeltaValue, const struct FGameplayTagContainer& SourceTags);
 	void HandleSoulsChanged(float DeltaValue, const struct FGameplayTagContainer& SourceTags);
 	void HandleStanimaChanged(float DeltaValue, const struct FGameplayTagContainer& SourceTags);

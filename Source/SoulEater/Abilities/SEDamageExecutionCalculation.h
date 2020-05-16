@@ -15,6 +15,7 @@ class SOULEATER_API USEDamageExecutionCalculation : public UGameplayEffectExecut
 	GENERATED_BODY()
 
 public:
+	USEDamageExecutionCalculation();
 	void Execute_Implementation(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
 		FGameplayEffectCustomExecutionOutput& OutExecutionOutput) const override;
 };

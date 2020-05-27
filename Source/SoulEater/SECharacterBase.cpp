@@ -67,29 +67,28 @@ bool ASECharacterBase::SetCharacterLevel(int32 NewLevel) {
 }
 
 float ASECharacterBase::GetHealth() const {
-	return AttributeSet->GetHealth();
+	return AttributeSet ? AttributeSet->GetHealth() : 0;
 }
 
 float ASECharacterBase::GetMaxHealth() const {
-	return AttributeSet->GetMaxHealth();
+	return AttributeSet ? AttributeSet->GetMaxHealth() : 0;
 }
 
 float ASECharacterBase::GetStamina() const {
-	return AttributeSet->GetStamina();
+	return AttributeSet ? AttributeSet->GetStamina() : 0;
 }
 
 float ASECharacterBase::GetMaxStamina() const {
-	return AttributeSet->GetMaxStamina();
+	return AttributeSet ? AttributeSet->GetMaxStamina() : 0;
 }
 
 float ASECharacterBase::GetMoveSpeed() const {
-	return AttributeSet->GetMoveSpeed();
+	return AttributeSet ? AttributeSet->GetMoveSpeed() : 0;
 }
 
 float ASECharacterBase::GetSouls() const {
-	return AttributeSet->GetSouls();
+	return AttributeSet ? AttributeSet->GetSouls() : 0;
 }
-
 
 bool ASECharacterBase::ActivateAbilitiesWithTags(FGameplayTagContainer AbilityTags, bool bAllowRemoteActivation)
 {

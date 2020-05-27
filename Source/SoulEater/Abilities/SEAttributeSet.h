@@ -25,7 +25,6 @@ class SOULEATER_API USEAttributeSet : public UAttributeSet
 public:
 
 	void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
-
 	
 	UPROPERTY(BlueprintReadOnly, Category = "Health")
 	FGameplayAttributeData Health;

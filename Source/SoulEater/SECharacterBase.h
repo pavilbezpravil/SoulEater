@@ -103,7 +103,6 @@ protected:
 	void AddStartupGameplayAbilities();
 	void RemoveStartupGameplayAbilities();
 	
-	UPROPERTY()
     int32 bAbilitiesInitialized;
 
 	UFUNCTION(BlueprintImplementableEvent)
